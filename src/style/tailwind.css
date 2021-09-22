@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cartClose {
+    width: 24vw;
+    position: fixed;
+    min-height: 100vh;
+    display: block;
+    animation-duration: .5s;
+    background-color: rgb(27,26,32);
+    animation-name: cartClose;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cartClose {
+    from {
+        top: 0;
+        right: 0;
+    }
+    to {
+        top: 0;
+        right: -28vw;
+    }
+}
+
+.cartOpen {
+    position: fixed;
+    width: 24vw;
+    min-height: 100vh;
+    background-color: rgb(27,26,32);
+    display: block;
+    animation-duration: .5s;
+    animation-name: cartOpen;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cartOpen {
+    from {
+        right: -28vw;
+        top: 0;
+    }
+    to {
+        right: 0;
+        top: 0;
+    }
+}
+
+.scroll-bar {
+    scrollbar-base-color: rgb(44, 43, 43);
+}
