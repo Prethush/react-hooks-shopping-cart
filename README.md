@@ -1,6 +1,6 @@
 # Shopping Cart App
 
-This is shopping cart app created using React JS and Tailwind CSS. In this application I have use used react hooks to manage and update state and localstorage is also used to persist the data.
+This is shopping cart app created using React JS and Tailwind CSS. In this application I have use used react hooks to manage state and Localstorage to persist data. This app is hosted on netlify.
 
 ## Installation
 

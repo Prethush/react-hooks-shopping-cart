@@ -29,7 +29,7 @@ function Products(props) {
         let allProducts = getAllProducts(props.filterByPrice, props.filterSize, props.data);
         return (
             <> 
-            {/* //sorting (Highest to lowest) */}
+            {/* sorting (Highest to lowest) */}
                 < OrderBy allProducts = {allProducts} filterByPrize = {props.filterByPrize} handleFilterByPrice={props.handleFilterByPrice}/>
                 <div className="flex flex-wrap mt-4">
                     {

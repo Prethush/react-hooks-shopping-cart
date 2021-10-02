@@ -2,9 +2,10 @@ import React from 'react';
 import '../style/style.css';
 
 function Cart(props){
-   
+
     let cart = props.cart;
     return (
+        // Cart
         <section className={props.cartOpen === "" ? "hidden": props.cartOpen ? "cartOpen relative": "cartClose relative "}>
             <span className="absolute py-3 px-5 text-white -left-12 text-xl bg-custom cursor-pointer" onClick={props.handleCartClose}>x</span>
             <div className="py-12 flex items-center justify-center relative">
