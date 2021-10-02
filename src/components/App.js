@@ -78,6 +78,7 @@ function App(props){
         setCartOpen(true);
     }
 
+    //reduce quantiity count
     const reduceItem = (event) => {
         let {id} = event.target;
         let newCart = [...cart];
@@ -86,6 +87,7 @@ function App(props){
         setCart(newCart);
     }
 
+    // remove product
     const removeItem = ({target}) => {
         let {id} = target;
         let newCart = [...cart];
