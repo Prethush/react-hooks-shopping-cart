@@ -14,7 +14,9 @@ function Products(props) {
                         return true;
                     }
                 }
+                return false;
             });
+            console.log(allProducts, "allProducts");
        }
        if(order === "high"){
             allProducts = allProducts.sort((a, b) => b.price - a.price);

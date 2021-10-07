@@ -14,7 +14,7 @@ function App(props){
     let [cart, setCart] = useState(JSON.parse(localStorage.getItem("carts")) || []);  
 
     useEffect(() => {
-       handleUpdateLocalStorage();
+        localStorage.setItem("carts", JSON.stringify(cart));
     }, [cart])
     
     //filter by price 
@@ -97,35 +97,30 @@ function App(props){
        
     }
 
-    //handle local storage
-    const handleUpdateLocalStorage = () => {
-        console.log("testing");
-        localStorage.setItem("carts", JSON.stringify(cart));
-    }
- 
-        let totalQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+    
+    let totalQuantity = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 
-        return (
-           <main className="relative px-64 pt-28 pb-20">
-               <div className="w-16 h-16 bg-black fixed right-0 top-0 flex justify-center items-center cursor-pointer" onClick={handleCartOpen}>
-                   <img src="/static/bag-icon.png" alt="cart"/>
-                   <div className="w-4 h-4 rounded-full bg-yellow-500 text-black absolute text-center right-2 bottom-3 text-xs">{totalQuantity}</div>
-               </div>
-               {/* Sizes */}
-              <section className="flex justify-between">
-                    < Aside products = {datas.products} handleFilterBySize={handleFilterBySize} filterSize={filterSize}/>
-                    <article className="flex-80">
-                            < Products data = {datas.products} handleFilterByPrice = {handleFilterByPrice} handleAddCart = {handleAddCart} filterByPrice={filterByPrice} filterSize = {filterSize}/>
-                    </article>
-                   
-              </section>
-               {
-                < Cart cart={cart} cartOpen={cartOpen} handleCartOpen = {handleCartOpen} handleCartClose = {handleCartClose} handleAddCart = {handleAddCart} reduceItem = {reduceItem} removeItem = {removeItem} totalQuantity={totalQuantity} total={getTotal()}/>
-               }
-              
-           </main>
-        )
-    }
+    return (
+        <main className="relative px-64 pt-28 pb-20">
+            <div className="w-16 h-16 bg-black fixed right-0 top-0 flex justify-center items-center cursor-pointer" onClick={handleCartOpen}>
+                <img src="/static/bag-icon.png" alt="cart"/>
+                <div className="w-4 h-4 rounded-full bg-yellow-500 text-black absolute text-center right-2 bottom-3 text-xs">{totalQuantity}</div>
+            </div>
+            {/* Sizes */}
+            <section className="flex justify-between">
+                < Aside products = {datas.products} handleFilterBySize={handleFilterBySize} filterSize={filterSize}/>
+                <article className="flex-80">
+                        < Products data = {datas.products} handleFilterByPrice = {handleFilterByPrice} handleAddCart = {handleAddCart} filterByPrice={filterByPrice} filterSize = {filterSize}/>
+                </article>
+                
+            </section>
+            {
+            < Cart cart={cart} cartOpen={cartOpen} handleCartOpen = {handleCartOpen} handleCartClose = {handleCartClose} handleAddCart = {handleAddCart} reduceItem = {reduceItem} removeItem = {removeItem} totalQuantity={totalQuantity} total={getTotal()}/>
+            }
+            
+        </main>
+    )
+}
 
 
 export default App;
